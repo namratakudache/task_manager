@@ -1,14 +1,16 @@
 import React, { useReducer, useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 // Initial state for the task management
 const initialState = {
   tasks: {
     todo: [
-      { id: "1", content: "Task 1" },
-      { id: "2", content: "Task 2" },
+      { id: "1", content: "Reading" },
+      { id: "2", content: "Gym" },
     ],
-    inProgress: [{ id: "3", content: "Task 3" }],
+    inProgress: [{ id: "3", content: "Mediatate" }],
     completed: [],
   },
 };
@@ -189,13 +191,13 @@ function Task({ task, index, columnId, deleteTask, editTask }) {
                 className="edit-button"
                 onClick={() => editTask(task.id, columnId)}
               >
-                Edit
+                <FontAwesomeIcon icon={faEdit} className="fa-lg" />
               </button>
               <button
                 className="delete-button"
                 onClick={() => deleteTask(task.id, columnId)}
               >
-                Delete
+                <FontAwesomeIcon icon={faTrash} className="fa-lg" />
               </button>
             </div>
           </div>

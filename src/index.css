@@ -7,6 +7,8 @@
   padding: 8px;
   margin-right: 8px;
   width: 250px;
+  border-radius: 5px;
+  /* border: #8e908e; */
 }
 
 .add-task-button {
@@ -63,7 +65,7 @@
 
 .edit-button,
 .delete-button {
-  padding: 5px 10px;
+  padding: 10px;
   border: none;
   cursor: pointer;
   border-radius: 4px;
@@ -78,4 +80,23 @@
 .delete-button {
   background-color: #007bff;
   color: white;
+}
+.task-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  padding: 5px;
+}
+
+.edit-button {
+  color: blue;
+}
+
+.delete-button {
+  color: red;
+}
+
+.task-buttons button:hover {
+  opacity: 0.7;
 }
