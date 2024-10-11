@@ -1,3 +1,4 @@
+/* Default styles (for larger screens) */
 .task-manager-container {
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -8,7 +9,6 @@
   margin-right: 8px;
   width: 250px;
   border-radius: 5px;
-  /* border: #8e908e; */
 }
 
 .add-task-button {
@@ -27,7 +27,7 @@
 }
 
 .task-column {
-  background: #f4f5f7;
+  background: #f1f2f3;
   padding: 8px;
   width: 300px;
   min-height: 400px;
@@ -81,6 +81,7 @@
   background-color: #007bff;
   color: white;
 }
+
 .task-buttons button {
   background: none;
   border: none;
@@ -99,4 +100,93 @@
 
 .task-buttons button:hover {
   opacity: 0.7;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  .task-columns {
+    flex-direction: column; /* Stack the columns vertically */
+    align-items: center;
+  }
+
+  .task-column {
+    width: 90%; /* Full width with some margin */
+    min-height: auto; /* Adjust min-height for smaller screens */
+  }
+
+  .task-input {
+    width: 100%; /* Full width input for mobile */
+    margin-bottom: 12px; /* Add space below the input */
+  }
+
+  .add-task-button {
+    width: 100%; /* Full width button for mobile */
+  }
+
+  .task-card {
+    padding: 12px; /* Slightly smaller padding for mobile */
+    flex-direction: column; /* Stack task content vertically */
+  }
+
+  .task-content {
+    flex-direction: column; /* Stack buttons and task text vertically */
+    align-items: flex-start; /* Align to the start of the card */
+  }
+
+  .task-buttons {
+    justify-content: flex-start; /* Align buttons to the left */
+  }
+
+  .edit-button,
+  .delete-button {
+    padding: 8px; /* Smaller padding for buttons */
+    font-size: 14px; /* Adjust font size for mobile */
+  }
+}
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 576px) {
+  .task-column {
+    width: 100%; /* Take the full width of the screen */
+  }
+
+  .task-input {
+    width: 100%; /* Full width input */
+  }
+
+  .add-task-button {
+    width: 100%; /* Full width button */
+  }
+
+  .task-card {
+    padding: 10px; /* Reduce padding even more for small devices */
+  }
+
+  .task-buttons {
+    width: 100%; /* Let buttons span full width */
+    justify-content: space-between; /* Space out the buttons on mobile */
+  }
+
+  .edit-button,
+  .delete-button {
+    width: 48%; /* Take nearly half of the available width */
+  }
+}
+.task-column-container {
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+  background-color: #f4f4f4;
+}
+
+.task-column-container h3 {
+  margin-bottom: 15px; /* Ensure space between the title and the tasks */
+}
+
+.task-list {
+  min-height: 100px; /* Ensure there's space for tasks */
+  padding: 10px;
+
+  border-radius: 4px;
 }

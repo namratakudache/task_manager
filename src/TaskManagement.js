@@ -149,28 +149,30 @@ function TaskManagement() {
 
 function Column({ title, tasks, columnId, deleteTask, editTask }) {
   return (
-    <Droppable droppableId={columnId}>
-      {(provided) => (
-        <div
-          {...provided.droppableProps}
-          ref={provided.innerRef}
-          className="task-column"
-        >
-          <h3>{title}</h3>
-          {tasks.map((task, index) => (
-            <Task
-              key={task.id}
-              task={task}
-              index={index}
-              columnId={columnId}
-              deleteTask={deleteTask}
-              editTask={editTask}
-            />
-          ))}
-          {provided.placeholder}
-        </div>
-      )}
-    </Droppable>
+    <div className="task-column-container">
+      <h3>{title}</h3>
+      <Droppable droppableId={columnId}>
+        {(provided) => (
+          <div
+            {...provided.droppableProps}
+            ref={provided.innerRef}
+            className="task-list" // Add this class to style task list specifically
+          >
+            {tasks.map((task, index) => (
+              <Task
+                key={task.id}
+                task={task}
+                index={index}
+                columnId={columnId}
+                deleteTask={deleteTask}
+                editTask={editTask}
+              />
+            ))}
+            {provided.placeholder}
+          </div>
+        )}
+      </Droppable>
+    </div>
   );
 }
 
