@@ -2,6 +2,7 @@ import React, { useReducer, useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import "./task.css";
 
 // Initial state for the task management
 const initialState = {
